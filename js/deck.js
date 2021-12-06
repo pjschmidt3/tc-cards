@@ -24,7 +24,7 @@ document.addEventListener(
     // ==========
 
     // connect to websocket server
-    socket = io.connect("serverURL");
+    socket = io.connect(serverURL);
 
     // register phone connection
     socket.emit("phone-connect", tableId);
@@ -83,7 +83,7 @@ function removeCard(id, strength) {
       suit: card.suit,
       rank: card.rank,
       angle: getCompassDirection(),
-      strength: 0,
+      strength: strength,
     });
   }, 200);
 }
